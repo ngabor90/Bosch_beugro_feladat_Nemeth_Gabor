@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 
 const API_BASE_URL = import.meta.env.VITE_APP_API_BASE_URL;
 
@@ -64,7 +66,7 @@ const LoginScreen = () => {
         <h2 className="text-center mb-4">Bejelentkezés</h2>
         <form onSubmit={handleLogin}>
           <div className="mb-3">
-            <label className="form-label">Email:</label>
+            <label className="form-label"><FontAwesomeIcon className="mx-2" icon={faEnvelope} /> Email: </label>
             <input
               type="email"
               className="form-control"
@@ -74,7 +76,7 @@ const LoginScreen = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Jelszó:</label>
+            <label className="form-label"><FontAwesomeIcon className="mx-2" icon={faLock} />Jelszó:</label>
             <input
               type="password"
               className="form-control"
