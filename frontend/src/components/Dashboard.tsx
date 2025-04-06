@@ -132,9 +132,10 @@ const Dashboard = () => {
             </button>
 
             {/* Kijelentkezés gomb */}
-              <button className="btn btn-danger mx-5 px-3" onClick={handleLogout}>
-                Kijelentkezés
-              </button>
+            <button className="btn btn-danger custom-logout-btn" onClick={handleLogout}>
+              Kijelentkezés
+            </button>
+
           </div>
         </div>
       </div>

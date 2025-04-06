@@ -3,14 +3,6 @@
   margin: auto;
 }
 
-input:hover{
-  border: 1px solid black;
-}
-
-select:hover{
-  border: 1px solid black;
-}
-
 .leaderboard-cards {
   display: flex;
   flex-wrap: wrap;
@@ -80,3 +72,14 @@ select:hover{
   color: #007bff;
 }
 
+.custom-logout-btn {
+  margin-left: 2rem;
+}
+
+@media (max-width: 420px) {
+  .custom-logout-btn {
+    margin-top: 20px; 
+    margin-left: 0;  
+    display: block; 
+  }
+}
