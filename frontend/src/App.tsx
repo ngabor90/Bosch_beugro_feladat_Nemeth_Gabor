@@ -1,16 +1,28 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import LoginScreen from './components/LoginScreen';
 import Dashboard from './components/Dashboard';
+import PrivateRoute from './components/PrivateRoute'; 
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginScreen />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* Alapértelmezett átirányítás a login oldalra */}
+        <Route path="/" element={<Navigate to="/login" />} />
+
+        {/* Nyilvános útvonal */}
+        <Route path="/login" element={<LoginScreen />} />
+        
+        {/* Védett útvonal */}
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </Router>
   );

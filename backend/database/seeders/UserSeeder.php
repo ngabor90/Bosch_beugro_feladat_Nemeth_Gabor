@@ -3,17 +3,18 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
     public function run()
     {
-        // Teszt felhasználó létrehozása
-        User::create([
-            'email' => 'testuser@example.com',
-            'password' => Hash::make('password123')
-        ]);
+        // Dummy felhasználó létrehozása
+        $user = new User;
+        $user->name = 'Test User';
+        $user->email = 'testuser@example.com';
+        $user->password = Hash::make('password123'); // A jelszót le kell hash-elni
+        $user->save();
     }
 }
